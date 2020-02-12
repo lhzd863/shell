@@ -2,7 +2,9 @@ cur=1
 while [ $cur -lt 1118 ]
 do
    curv=`printf "%03d" $cur`
-   wget http://177l.tt56w.com:8000/玄幻小说/剑道独尊/$curv.mp3?10103851686419x1581523374x10103857817079-8ff8f5cd62a86567ad4f5fc86147a970?3
-   mv "$curv.mp3?10103851686419x1581523374x10103857817079-8ff8f5cd62a86567ad4f5fc86147a970?3" $curv.mp3
+   if [ -f $curv.mp3 ];then
+       wget http://pse.tt56w.com:8000/单田芳/单田芳_白眉大侠320清晰/5tps.com_单田芳_白眉大侠_$curv.mp3?10103851687289x1581524244x10103857817949-316df399fa27d72058009a29f7f98f56?3
+       mv "5tps.com_单田芳_白眉大侠_$curv.mp3?10103851687289x1581524244x10103857817949-316df399fa27d72058009a29f7f98f56?3" $curv.mp3
+   fi
    let cur+=1
 done
