@@ -1,3 +1,4 @@
+#a.sh
 cur=1
 while [ $cur -lt 1118 ]
 do
@@ -8,3 +9,8 @@ do
    fi
    let cur+=1
 done
+
+
+
+#
+nohup bash a.sh > run.log 2>&1 &
