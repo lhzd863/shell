@@ -1,7 +1,7 @@
 #!/bin/bash
 ######################################################################
 #  brief :delete hdfs dir
-#version :2020-08-06     create              liuhui
+#version :2020-08-06     create              xxx
 ######################################################################
 HDFS_FILESPOOL=/tmp
 
@@ -33,18 +33,7 @@ function main()
       
       if [ "$batch_local_pathtype" == "dir" ]||[ "$batch_local_pathtype" == "file" ];then
         let batch_local_file_keep_s=$batch_local_keepdays*24*3600
-        
-        #local tmp_touch_file_tm=`date '+%Y%m%d%H%M%S'`
-        #local tmp_touch_file_id=$RANDOM
-        #local tmp_touch_file_name="test_touch_${tmp_touch_file_tm}_${tmp_touch_file_id}.txt"
-        #
-        #hadoop fs -touchz $HDFS_FILESPOOL/$tmp_touch_file_name
-        #errquit $? "hadoop touchz file fail"
-        #
-        #local current_timestamp=`hadoop fs -ls $HDFS_FILESPOOL/$tmp_touch_file_name|tail -1|awk -F ' ' '{printf("%s %s:00",$6,$7)}'`
-        #hadoop fs -rm -r -f -skipTrash $HDFS_FILESPOOL/$tmp_touch_file_name
-        #
-        #local current_date=`echo "${current_timestamp:0:10}"|sed 's/\-//g'|sed 's/\.//g'`
+
         current_timestamp=`date '+%Y-%m-%d %H:%M:%S'`
         end_timestamp_s=$(date +%s -d "$current_timestamp")
         let end_timestamp_s=$end_timestamp_s-$batch_local_file_keep_s
@@ -99,7 +88,7 @@ function main()
         continue      
       fi
 
-  done</home/lbs/liuh/delete_hdfs_dir/delete_hdfs_dir.cfg
+  done<./delete_hdfs_dir.cfg
 
   return 0
 }
